@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to left, #d0e7ff, #003366);
+
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            margin: 5px;
+            height:450px;
+            width: 550px;
+            background-color: rgba(220, 220, 220, 0.6);
+            border-radius: 10px;
+            border: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"],
+        input[type="tel"]
+        {
+            width: 500px;
+            height: 25px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 5px;
+        }
+
+        textarea{
+            max-width: 500px;
+            min-width: 500px;
+            width: 500px;
+            border: none;
+            border-radius: 8px;
+            padding: 5px;
+            height: 100px;
+            resize: none;
+        }
+
+        button{
+            border-radius: 8px;
+            border: none;
+            width: 150px;
+            height: 30px;
+        }
+
+        button:hover{
+            background-color: black;
+            color: white;
+        }
+
+        label{
+            font-size: 20px;
+        }
+
+        textarea,button,input:focus{
+            border: none;
+            outline: none;
+        }
+
+        button:active{
+            transform: scale(0.95);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>My Form</h1>
+    <div class="container">
+        <form>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="lastname">Last Name</label><br>
+            <input type="text" id="lastname" name="lastname"><br><br>
+
+            <label for="number">Number</label><br>
+            <input type="tel" id="number" name="number"><br><br>
+
+            <label for="description">Description</label><br>
+            <textarea id="description" name="description"></textarea><br><br>
+
+            <button type="submit" id="button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    const btn = document.getElementById("button");
+
+    btn.onclick = function(event) {
+        event.preventDefault(); // Prevents form reload
+        alert("Thank you for filling out the form!");
+    };
+</script>
+
